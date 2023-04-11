@@ -133,7 +133,9 @@ public class Board : MonoBehaviour
 
     private bool checkWin()
     {
-        if (!maskMap.ContainsTile(tiles[(int)TileType.Unknown]) || calculateOpen() == bombCount)
+        Debug.Log(calculateOpen());
+        Debug.Log(maskMap.ContainsTile(tiles[(int)TileType.Unknown]));
+        if (!maskMap.ContainsTile(tiles[(int)TileType.Unknown]) || (width*height)-calculateOpen() == bombCount)
         {
             return true;
         }
